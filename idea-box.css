@@ -1,10 +1,97 @@
+article {
+  margin: 1em;
+  position: relative;
+}
+
 body {
-  background-color: grey;
+  background-color: #FFFFFF;
+  margin: 0em;
+}
+
+h1 {
+  margin: 0;
+  padding: .5em 0em;
+  text-align: center;
+}
+
+h1,
+h2 {
+  font-family: 'Roboto Slab', serif;
+  color: #6D6E71;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  text-align: left;
+  color: #6D6E71;
+  font-size: .9em;
+  margin-left: 4.4em;
+}
+.ideaH1 {
+  color: #00A79D;
+}
+
+input {
+  margin: auto;
+  width: 85%;
+  display: block;
+  border: 1px solid #B0B2B5;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+  color: #939598;
+  font-size: .9em;
+}
+
+::placeholder {
+  font-size: 1.4em;
+  font-weight: 600;
+  font-family: 'Open Sans', sans-serif;
+  color: #939598;
+}
+
+header {
+  width: 100%;
+  height: 50vh;
+  background-color: #E5F3F2;
 }
 
 .circle {
-  width: 30px;
-  height: 30px;
+  width: 1.2em;
+  height: 1.2em;
   background-color: black;
-  border-radius: 50%
+  border-radius: 50%;
+  position: absolute;
+  display: inline-block;
+}
+
+.delete {
+  top: .2em;
+  right: 0;
+}
+
+.upvote {
+  bottom: 1em;
+  left: 0;
+}
+
+.downvote {
+  left: 2em;
+  bottom: 1em;
+}
+
+.qualityValue {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.save-btn {
+  margin: auto;
+  display: block;
+  width: 86%;
+  background-color: #00A79D;
+  color: #FFFFFF;
 }
