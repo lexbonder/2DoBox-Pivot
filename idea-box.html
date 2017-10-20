@@ -5,28 +5,34 @@
   <title>Idea Box</title>
   <link rel="stylesheet" type="text/css" href="idea-box.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600" rel="stylesheet">
 </head>
 
 <body>
   <header>
-    <h2>ideabox</h2>
+    <h1><span class="ideaH1">idea</span>box</h1>
     <label for="title-input"></label>
-    <input type="text" id="title-input">
+    <input type="text" id="title-input" placeholder="Title">
     <label for="description-input"></label>
-    <input type="text" id="description-input">
+    <input type="text" id="description-input" placeholder="Body">
     <button class="save-btn" type="submit">save</button>
   </header>
 
   <section>
     <label for="search"></label>
-    <input type="submit" id="search">
+    <input type="text" id="search" placeholder="Search">
 
     <article>
       <h2>Example Idea 1</h2>
       <div class="circle delete"> </div>
       <!-- <img alt="upvote idea" src="/images/delete.svg"> -->
-      <p>Tiramasu stuff</p>
-      <h3>quality: swill</h3>
+      <p>The seaweed is always greener
+        In somebody else's lake
+        You dream about going up there
+        But that is a big mistake
+        Just look at the world around you</p>
+      <h3>quality: <span class="qualityValue">swill</span></h3>
       <div class="circle upvote"> </div>
       <div class="circle downvote"> </div>
       <!-- <img alt="upvote idea" src="/images/upvote.svg"> -->
