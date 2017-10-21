@@ -10,7 +10,7 @@ function createIdea() {
   $('article').append(
     `<article id ="${id}">
       <h2>${title}</h2>
-      <div class="circle delete"> </div>
+      <div class="circle delete" onClick='removeCard(${id})'> </div>
       <p>${body}</p>
       <h3>quality: <span class="qualityValue">swill</span></h3>
       <div class="circle upvote"> </div>
@@ -18,13 +18,15 @@ function createIdea() {
       <hr>
     </article>`)
   countVotes();
-  // $('.delete').on('click', removeCard(id));
 };
 
-// function removeCard(id){
-//   $('#' + id).remove();
-//   console.log(id);
-// }
+$('.delete').on('click', removeCard);
+
+function removeCard(id) {
+  $('#' + id).remove();
+}
+
+
 
 //at the creation of each card, call counting function
 //Each time an upvote or downvote is clicked, add to counter accordingly
