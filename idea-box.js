@@ -1,4 +1,5 @@
 $('.save-btn').on('click', function() {
+  event.preventDefault();
   var title = $('#title-input').val();
    var body = $('#description-input').val();
   var id = $.now();
