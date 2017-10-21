@@ -1,5 +1,9 @@
 $('.save-btn').on('click', function(e) {
   e.preventDefault();
+  createIdea();
+  });
+
+function createIdea() {
   var title = $('#title-input').val();
   var body = $('#description-input').val();
   var id = $.now();
@@ -12,5 +16,43 @@ $('.save-btn').on('click', function(e) {
       <div class="circle upvote"> </div>
       <div class="circle downvote"> </div>
       <hr>
-    </article>)`)
+    </article>`)
+  countVotes();
+  // $('.delete').on('click', removeCard(id));
+};
+
+// function removeCard(id){
+//   $('#' + id).remove();
+//   console.log(id);
+// }
+
+//at the creation of each card, call counting function
+//Each time an upvote or downvote is clicked, add to counter accordingly
+//Start at swill, 2-3upvotes is plausible, 4 upvotes is genius
+//limit count at 1-4
+
+function countVotes() {
+  var i = 1;
+  var qualityDisplay = $('.qualityValue');
+  qualityDisplay.text('swill');
+  $('.upvote').on('click', function() {
+    i++;
+    if (i > 1 && i <= 3) {
+      qualityDisplay.text('plausible');
+    }
+    else if (i >= 4) {
+      i = 4;
+      qualityDisplay.text('genius');
+    }
   });
+  $('.downvote').on('click', function() {
+    i--;
+    if (i >= 3 && i > 1) {
+      qualityDisplay.text('plausible');
+    }
+    else if (i <= 1) {
+      i = 1;
+      qualityDisplay.text('swill');
+    }
+  });  
+}
