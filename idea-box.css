@@ -142,8 +142,12 @@ header {
   font-size: 1.4em;
   margin: 0% 0% 0% 21%;
   display: block;
-  background-color: #00A79D;
+  background-color: #4BA59E;
   color: #FFFFFF;
+}
+
+.save-btn:disabled {
+  background-color: #9AB3B1;
 }
 
 @media screen and (max-width: 900px) {

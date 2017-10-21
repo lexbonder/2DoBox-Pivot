@@ -1,7 +1,17 @@
+$('#title-input').focus();
+
+
 $('.save-btn').on('click', function(e) {
   e.preventDefault();
   createIdea();
   });
+
+
+function enabledButton() {
+$('.save-btn').attr('disabled', false);
+  }
+$('#title-input').on('keyup', enabledButton); 
+$('#description-input').on('keyup', enabledButton);
 
 function createIdea() {
   var title = $('#title-input').val();
@@ -19,6 +29,7 @@ function createIdea() {
     </article>`)
   countVotes();
 };
+
 
 $('.delete').on('click', removeCard);
 
