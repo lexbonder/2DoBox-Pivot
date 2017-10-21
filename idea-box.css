@@ -36,6 +36,7 @@ h3 {
   color: #6D6E71;
   margin-left: 4.4em;
 }
+
 .ideaH1 {
   color: #00A79D;
 }
@@ -78,7 +79,6 @@ header {
 .circle {
   width: 1.2em;
   height: 1.2em;
-  background-color: black;
   border-radius: 50%;
   position: absolute;
   display: inline-block;
@@ -87,16 +87,49 @@ header {
 .delete {
   top: .2em;
   right: 0;
+  background-image: url("images/delete.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+}
+
+.delete:hover {
+  background-image: url("images/delete-hover.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
 }
 
 .upvote {
   bottom: 1em;
   left: 0;
+  background-image: url("images/upvote.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+}
+
+.upvote:hover {
+  background-image: url("images/upvote-hover.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
 }
 
 .downvote {
   left: 2em;
   bottom: 1em;
+  background-image: url("images/downvote.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
+}
+
+.downvote:hover {
+  background-image: url("images/downvote-hover.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  object-fit: cover;
 }
 
 .qualityValue {
