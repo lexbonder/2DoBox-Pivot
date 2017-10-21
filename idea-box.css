@@ -95,3 +95,147 @@ header {
   background-color: #00A79D;
   color: #FFFFFF;
 }
+
+@media screen and (max-width: 400px) {
+  header {
+    height:  42vh;
+  }
+
+  h1 {
+    height: 4vh;
+    padding: 1% 0% 1% 1%;
+    font-size: 1.85em
+  }
+
+  input {
+    font-size: 0.95em;
+    margin: 2% 0% 3% 7%;
+    height: 3vh;
+    padding: 4% 0% 2% 2%;
+  }
+
+  #description-input{
+    height: 29%;
+  }
+  .save-btn {
+    height: 15%
+    width: 88%
+    font-size: 1.65em;
+    margin: 4% 0% 0% 6.5%;
+  }
+
+  #search {
+    margin: 5% 0% 5% 7%;
+  }
+
+  h2{
+    font-size: 1.5em;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  h3 {
+    font-size: 1.2em;
+  } 
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    height: 52vh;
+  }
+  h1 {
+    font-size: 3em;
+
+  }
+
+  input {
+    font-size: 0.85em;
+    padding: 0% 0% 0% 1%;
+    margin: 0% 0% 3% 17%;
+    width: 64%;
+    height: 13%;
+  }
+
+  #search {
+    height: 3em;
+    padding: 0% 0% 0% 1%;
+  }
+
+  .save-btn {
+    font-size: 1.5em;
+    height: 14%;
+    margin: 3% 1% 1% 16.5%;
+    display: block;
+    width: 66%;
+  }
+
+  article {
+    width: 64%;
+    height: 50%;
+    margin: auto
+  }
+
+  h2 {
+    font-size: 1.6em;
+  }
+
+  p {
+    font-size: 1em;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin-left: 5.4em;
+  }
+}
+
+@media and screen (min-width: 900px) {
+  header {
+    height: 69vh;
+  }
+  h1 {
+    font-size: 3em;
+  }
+
+  input {
+    height: 9%;
+    font-size: 1em;
+    padding: 1% 0% 0% 1%;
+    margin: 0% 0% 2% 21%;
+    width: 55%;
+  }
+
+  .save-btn {
+    height: 15%;
+    width: 56%;
+    font-size: 1.4em;
+    margin: 0% 0% 0% 21%;
+  }
+
+  #search {
+    padding: 1%;
+    height: 9%;
+    margin: 2% 0% 2% 20%;
+  }
+
+  article {
+    width: 57%;
+    height: 50%;
+    margin: 3% 0% 3% 20%;
+  }
+
+  h2 {
+  font-size: 1.6em;
+  }
+
+  p {
+  font-size: 1.5em;
+  }
+
+  h3 {
+  font-size: 1.3em;
+  }
+  
+}
