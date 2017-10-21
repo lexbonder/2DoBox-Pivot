@@ -1,7 +1,7 @@
-$('.save-btn').on('click', function() {
-  event.preventDefault();
+$('.save-btn').on('click', function(e) {
+  e.preventDefault();
   var title = $('#title-input').val();
-   var body = $('#description-input').val();
+  var body = $('#description-input').val();
   var id = $.now();
   $('article').append(
     `<article id ="${id}">
@@ -12,5 +12,5 @@ $('.save-btn').on('click', function() {
       <div class="circle upvote"> </div>
       <div class="circle downvote"> </div>
       <hr>
-    </article>)`
+    </article>)`)
   });
