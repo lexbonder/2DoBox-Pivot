@@ -1,10 +1,17 @@
-$('#title-input').focus();
 
+$('#title-input').focus();
 
 $('.save-btn').on('click', function(e) {
   e.preventDefault();
-  createIdea();
+  storeIdea();
+  clearInput();
   });
+
+function clearInput() {
+  $('#description-input').val('');
+  $('#title-input').val('');
+  $('#title-input').focus();
+}
 
 
 function enabledButton() {
@@ -14,10 +21,29 @@ $('.save-btn').attr('disabled', false);
 $('#title-input').on('keyup', enabledButton); 
 $('#description-input').on('keyup', enabledButton);
 
-function createIdea() {
-  var title = $('#title-input').val();
-  var body = $('#description-input').val();
-  var id = $.now();
+function StoreCard(title, body, id) {
+  this.title = title;
+  this.body = body;
+  this.id = id;
+}
+
+function storeIdea() {
+  var $title = $('#title-input').val();
+  var $body = $('#description-input').val();
+  var $id = Date.now();
+  var storeCard = new StoreCard($title, $body, $id);
+  var stringified = JSON.stringify(storeCard);
+  localStorage.setItem($id, stringified);
+  loadIdea($title, $body, $id);
+}
+
+function loadIdea(title, body, id) {
+var retrieved = localStorage.getItem(id);
+var parsedObject = JSON.parse(retrieved);
+createIdea(title, body, id);
+}
+
+function createIdea(title, body, id) {
   $('.card-container').append(
     `<article id ="${id}">
       <h2>${title}</h2>
@@ -28,8 +54,15 @@ function createIdea() {
       <div class="circle downvote"> </div>
       <hr>
     </article>`)
-};
+}
 
+// function getAllIdeas() {
+  
+// }
+
+// $(window).on('load', function() {
+//   storeIdea();
+// })
 
 //event bubbler for vote and remove functions
 $('.card-container').on( 'click', '.delete', function() {
