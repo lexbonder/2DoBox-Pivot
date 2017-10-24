@@ -5,6 +5,10 @@ article {
   position: relative;
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   background-color: #FFFFFF;
   margin: 0em;
