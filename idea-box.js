@@ -1,3 +1,8 @@
+$(document).ready(function() {
+  for (var i in localStorage) {
+    displayIdea(i);
+  }
+ });
 
 $('#title-input').focus();
 
@@ -34,17 +39,59 @@ function storeIdea() {
   var storeCard = new StoreCard($title, $body, $id);
   var stringified = JSON.stringify(storeCard);
   localStorage.setItem($id, stringified);
-  loadIdea($title, $body, $id);
+  displayIdea($id);
 }
 
-function loadIdea(title, body, id) {
-var retrieved = localStorage.getItem(id);
-var parsedObject = JSON.parse(retrieved);
-createIdea(title, body, id);
+function displayIdea(id) {
+  var getArray = localStorage.getItem(id);
+  var retreivedArray = JSON.parse(getArray);
+  var title = retreivedArray.title;
+  var body = retreivedArray.body;
+  var id = retreivedArray.id;
+  createIdea(title, body, id);
 }
+
+// function addToArray(id, retreivedArray) {
+//   retreivedArray.unshift(id);
+//   sendToStorage(retreivedArray);
+// }
+
+// function sendToStorage(retreivedArray) {
+// var stringifiedArray = JSON.stringify(retreivedArray);
+// var storedArray = localStorage.setItem('name', stringifiedArray);
+// var getArray = localStorage.getItem('name');
+// }
+
+// function displayIdea(j) {
+//   localStorage.getItem(j)
+// }
+
+//displayIdea
+// get item, parse it, append parsedIdea.title, .body, .id
+
+
+// for(var i in localStorage) {
+  // displayIdea(i);
+// }
+
+
+  //Initialize empty array and store in local storage
+  // var idArray = [];
+  // var stringifiedArray = JSON.stringify(idArray);
+  // var storedArray = localStorage.setItem('name', stringifiedArray);
+
+// function loadIdea(title, body, id) {
+// var title = title;
+// var body = body;
+// var id = id;
+// var retrieved = localStorage.getItem(id);
+// var parsedObject = JSON.parse(retrieved);
+// createIdea(title, body, id);
+// }
 
 function createIdea(title, body, id) {
-  $('.card-container').append(
+  //instead of passing parameters, load from local storage
+  $('.card-container').prepend(
     `<article id ="${id}">
       <h2>${title}</h2>
       <div class="circle delete"></div>
@@ -55,14 +102,6 @@ function createIdea(title, body, id) {
       <hr>
     </article>`)
 }
-
-// function getAllIdeas() {
-  
-// }
-
-// $(window).on('load', function() {
-//   storeIdea();
-// })
 
 //event bubbler for vote and remove functions
 $('.card-container').on( 'click', '.delete', function() {
