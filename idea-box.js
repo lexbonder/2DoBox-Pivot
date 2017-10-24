@@ -51,44 +51,6 @@ function displayIdea(id) {
   createIdea(title, body, id);
 }
 
-// function addToArray(id, retreivedArray) {
-//   retreivedArray.unshift(id);
-//   sendToStorage(retreivedArray);
-// }
-
-// function sendToStorage(retreivedArray) {
-// var stringifiedArray = JSON.stringify(retreivedArray);
-// var storedArray = localStorage.setItem('name', stringifiedArray);
-// var getArray = localStorage.getItem('name');
-// }
-
-// function displayIdea(j) {
-//   localStorage.getItem(j)
-// }
-
-//displayIdea
-// get item, parse it, append parsedIdea.title, .body, .id
-
-
-// for(var i in localStorage) {
-  // displayIdea(i);
-// }
-
-
-  //Initialize empty array and store in local storage
-  // var idArray = [];
-  // var stringifiedArray = JSON.stringify(idArray);
-  // var storedArray = localStorage.setItem('name', stringifiedArray);
-
-// function loadIdea(title, body, id) {
-// var title = title;
-// var body = body;
-// var id = id;
-// var retrieved = localStorage.getItem(id);
-// var parsedObject = JSON.parse(retrieved);
-// createIdea(title, body, id);
-// }
-
 function createIdea(title, body, id) {
   //instead of passing parameters, load from local storage
   $('.card-container').prepend(
@@ -129,5 +91,8 @@ $('.card-container').on('click', '.downvote', function() {
 });
 
 function removeCard(e) {
-  $(e).closest('article').remove();
+  var cardToDel = $(e).closest('article');
+  var cardID = $(cardToDel).attr('id');
+  localStorage.removeItem(cardID)
+  cardToDel.remove();
 }
