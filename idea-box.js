@@ -5,6 +5,7 @@ $(document).ready(function() {
  });
 
 $('#title-input').focus();
+$('')
 
 $('.save-btn').on('click', function(e) {
   e.preventDefault();
@@ -58,10 +59,10 @@ function displayIdea(id) {
 function createIdea(title, body, id, quality) {
   //instead of passing parameters, load from local storage
   $('.card-container').prepend(
-    `<article id ="${id}">
-      <h2>${title}</h2>
+    `<article class="container" id ="${id}">
+      <h2 contenteditable="true">${title}</h2>
       <div class="circle delete"></div>
-      <p>${body}</p>
+      <p contenteditable="true">${body}</p>
       <h3>quality: <span class="qualityValue">${quality}</span></h3>
       <div class="circle upvote"> </div>
       <div class="circle downvote"> </div>
@@ -70,6 +71,25 @@ function createIdea(title, body, id, quality) {
 }
 
 //event bubbler for vote and remove functions
+
+$('.card-container').on('blur', 'article h2', function () {
+  var cardID = $(this).closest('article').attr('id');
+  var pullCardID = localStorage.getItem(cardID);
+  var parsedCardId = JSON.parse(pullCardID);
+  parsedCardId.title = $(this).text();
+  var titleStringify =JSON.stringify(parsedCardId);
+  var storeTitle = localStorage.setItem(cardID, titleStringify);
+});
+
+$('.card-container').on('blur', 'article p', function() {
+  var cardID = $(this).closest('article').attr('id');
+  var pullCardID = localStorage.getItem(cardID);
+  var parsedCardId = JSON.parse(pullCardID);
+  parsedCardId.body = $(this).text();
+  var bodyStringify =JSON.stringify(parsedCardId);
+  var storeBody = localStorage.setItem(cardID, bodyStringify);
+});
+
 $('.card-container').on( 'click', '.delete', function() {
   removeCard(this);
 });
