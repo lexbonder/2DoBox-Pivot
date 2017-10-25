@@ -1,12 +1,8 @@
 article {
   width: 57%;
   height: 50%;
-  margin: 3% 0% 3% 20%;
+  margin: 1em auto;
   position: relative;
-}
-
-.hidden {
-  display: none;
 }
 
 body {
@@ -49,7 +45,7 @@ input {
   height: 9%;
   font-size: 1em;
   padding: 1% 0% 0% 1%;
-  margin: 0% 0% 2% 21%;
+  margin: 1em auto;
   width: 55%;
   display: block;
   border: 1px solid #B0B2B5;
@@ -58,7 +54,7 @@ input {
 #search {
   padding: 1%;
   height: 9%;
-  margin: 2% 0% 2% 20%;
+  margin: 1.5em auto;
   }
 
 p {
@@ -144,10 +140,11 @@ header {
   height: 15%;
   width: 56%;
   font-size: 1.4em;
-  margin: 0% 0% 0% 21%;
+  margin: auto;
   display: block;
   background-color: #4BA59E;
   color: #FFFFFF;
+  border: none;
 }
 
 .save-btn:disabled {
@@ -204,7 +201,7 @@ header {
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 420px) {
   header {
     height:  42vh;
   }
@@ -217,7 +214,7 @@ header {
 
   input {
     font-size: 0.95em;
-    margin: 2% 0% 3% 7%;
+    margin: .8em auto;
     height: 3vh;
     padding: 4% 0% 2% 2%;
   }
@@ -227,13 +224,14 @@ header {
   }
   .save-btn {
     height: 15%;
-    width: 88%;
+    width: 66.6%;
     font-size: 1.65em;
-    margin: 4% 0% 0% 6.5%;
+    margin: auto;
+    border: none;
   }
 
   #search {
-    margin: 5% 0% 5% 7%;
+    margin: 1em auto;
   }
 
   h2{
@@ -241,7 +239,7 @@ header {
   }
 
   p {
-    font-size: 1.2em;
+    font-size: .8em;
   }
 
   h3 {
@@ -249,7 +247,7 @@ header {
   } 
 }
 
-@media screen and (max-width: 340px) {
+/*@media screen and (max-width: 340px) {
   header {
     height: 43vh;
   }
@@ -278,3 +276,4 @@ header {
     font-size: 1.3em;
   }
 }
+*/
