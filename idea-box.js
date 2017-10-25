@@ -35,6 +35,44 @@ function StoreCard(title, body, id, quality) {
 
 }
 
+$('#search').on('keyup', function() {
+  searchTitle();
+  searchBody();
+});
+
+function searchTitle() {
+ var $searchValue = $('#search').val().toLowerCase();
+ var $cardsTitle = $('article h2');
+
+ $.each($cardsTitle, function(index, value){
+  var $cardsLowerCase = $(value).text().toLowerCase();
+  if ($cardsLowerCase.includes($searchValue) === true) {
+  var cardShow = $(value).parent('article');
+  cardShow.show();
+  } 
+else {
+  var cardShow = $(value).parent('article');
+  cardShow.hide();
+  }
+ })}
+
+function searchBody() {
+ var $searchValue = $('#search').val().toLowerCase();
+ var $cardsBody = $('article p');
+
+ $.each($cardsBody, function(index, value){
+  var $cardsLowerCase = $(value).text().toLowerCase();
+  if ($cardsLowerCase.includes($searchValue) === true) {
+  var cardShow = $(value).parent('article');
+  cardShow.show();
+  } 
+else {
+  var cardShow = $(value).parent('article');
+  cardShow.hide();
+  }
+})
+}
+
 function storeIdea() {
   var $title = $('#title-input').val();
   var $body = $('#description-input').val();
