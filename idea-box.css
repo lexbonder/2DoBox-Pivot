@@ -1,13 +1,19 @@
 article {
-  width: 57%;
   height: 50%;
   margin: 1em auto;
   position: relative;
+  width: 57%;
 }
 
 body {
   background-color: #FFFFFF;
   margin: 0em;
+}
+
+header {
+  background-color: #E5F3F2;
+  height: 59vh;
+  width: 100%;
 }
 
 h1 {
@@ -18,118 +24,86 @@ h1 {
 
 h1,
 h2 {
-  font-family: 'Roboto Slab', serif;
   color: #6D6E71;
+  font-family: 'Roboto Slab', serif;
 }
 
 h2 {
   font-size: 1.6em;
 }
 
-p {
-  font-size: 1.5em;
-}
-
 h3 {
-  font-size: 1.3em;
-  text-align: left;
   color: #6D6E71;
+  font-size: 1.3em;
   margin-left: 4.4em;
-}
-
-.ideaH1 {
-  color: #00A79D;
+  text-align: left;
 }
 
 input {
-  height: 9%;
-  font-size: 1em;
-  padding: 1% 0% 0% 1%;
-  margin: 1em auto;
-  width: 55%;
-  display: block;
   border: 1px solid #B0B2B5;
+  display: block;
+  font-size: 1em;
+  height: 9%;
+  margin: 1em auto;
+  padding: 1% 0% 0% 1%;
+  width: 55%;
 }
 
-#search {
-  padding: 1%;
-  height: 9%;
-  margin: 1.5em auto;
-  }
+input::placeholder {
+  color: #939598;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4em;
+  font-weight: 600;
+}
 
 p {
-  font-family: 'Open Sans', sans-serif;
   color: #939598;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
 }
 
-::placeholder {
-  font-size: 1.4em;
-  font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
-  color: #939598;
-}
-
-header {
-  width: 100%;
-  height: 59vh;
-  background-color: #E5F3F2;
-}
-
 .circle {
-  width: 1.2em;
-  height: 1.2em;
   border-radius: 50%;
-  position: absolute;
   display: inline-block;
+  height: 1.2em;
+  position: absolute;
+  width: 1.2em;
 }
 
 .delete {
-  top: .2em;
-  right: 0;
   background-image: url("images/delete.svg");
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   object-fit: cover;
+  right: 0;
+  top: .2em;
 }
 
 .delete:hover {
   background-image: url("images/delete-hover.svg");
-  background-repeat: no-repeat;
   background-position: center;
-  object-fit: cover;
-}
-
-.upvote {
-  bottom: 1em;
-  left: 0;
-  background-image: url("images/upvote.svg");
   background-repeat: no-repeat;
-  background-position: center;
-  object-fit: cover;
-}
-
-.upvote:hover {
-  background-image: url("images/upvote-hover.svg");
-  background-repeat: no-repeat;
-  background-position: center;
   object-fit: cover;
 }
 
 .downvote {
-  left: 2em;
-  bottom: 1em;
   background-image: url("images/downvote.svg");
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
+  bottom: 2em;
+  left: 2em;
   object-fit: cover;
 }
 
 .downvote:hover {
   background-image: url("images/downvote-hover.svg");
-  background-repeat: no-repeat;
   background-position: center;
+  background-repeat: no-repeat;
   object-fit: cover;
+}
+
+.ideaH1 {
+  color: #00A79D;
 }
 
 .qualityValue {
@@ -137,21 +111,49 @@ header {
 }
 
 .save-btn {
-  height: 15%;
-  width: 56%;
-  font-size: 1.4em;
-  margin: auto;
-  display: block;
   background-color: #4BA59E;
-  color: #FFFFFF;
   border: none;
+  color: #FFFFFF;
+  display: block;
+  font-size: 1.4em;
+  height: 15%;
+  margin: auto;
+  width: 56%;
 }
 
 .save-btn:disabled {
   background-color: #9AB3B1;
 }
 
+.upvote {
+  background-image: url("images/upvote.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  bottom: 2em;
+  left: 0;
+  object-fit: cover;
+}
+
+.upvote:hover {
+  background-image: url("images/upvote-hover.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+#search {
+  height: 9%;
+  margin: 1.5em auto;
+  padding: 1%;
+}
+
 @media screen and (max-width: 900px) {
+  article {
+    height: 50%;
+    margin: auto;
+    width: 64%;
+  }
+  
   header {
     height: 52vh;
   }
@@ -160,19 +162,31 @@ header {
     font-size: 3em;
   }
 
+  h2 {
+    font-size: 1.6em;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin-left: 5.4em;
+  }
+
   input {
     font-size: 0.85em;
-    padding: 0% 0% 0% 1%;
-    margin: 0% 0% 3% 17%;
-    width: 64%;
     height: 13%;
-  }
-
-  #search {
-    height: 3em;
+    margin: 0% 0% 3% 17%;
     padding: 0% 0% 0% 1%;
+    width: 64%;
   }
 
+  p {
+    font-size: 1em;
+  }
+
+  .downvote {
+    bottom: 1.6em;
+  }
+ 
   .save-btn {
     font-size: 1.5em;
     height: 14%;
@@ -181,24 +195,15 @@ header {
     width: 66%;
   }
 
-  article {
-    width: 64%;
-    height: 50%;
-    margin: auto;
+  .upvote {
+    bottom: 1.6em;
   }
 
-  h2 {
-    font-size: 1.6em;
+  #search {
+    height: 3em;
+    padding: 0% 0% 0% 1%;
   }
-
-  p {
-    font-size: 1em;
-  }
-
-  h3 {
-    font-size: 1em;
-    margin-left: 5.4em;
-  }
+  
 }
 
 @media screen and (max-width: 420px) {
@@ -207,73 +212,51 @@ header {
   }
 
   h1 {
+    font-size: 1.85em;
     height: 4vh;
     padding: 1% 0% 1% 1%;
-    font-size: 1.85em;
-  }
-
-  input {
-    font-size: 0.95em;
-    margin: .8em auto;
-    height: 3vh;
-    padding: 4% 0% 2% 2%;
-  }
-
-  #description-input{
-    height: 29%;
-  }
-  .save-btn {
-    height: 15%;
-    width: 66.6%;
-    font-size: 1.65em;
-    margin: auto;
-    border: none;
-  }
-
-  #search {
-    margin: 1em auto;
   }
 
   h2{
     font-size: 1.5em;
   }
 
+  h3 {
+    font-size: 1.2em;
+  } 
+
+  input {
+    font-size: 0.95em;
+    height: 3vh;
+    margin: .8em auto;
+    padding: 4% 0% 2% 2%;
+  }
+
   p {
     font-size: .8em;
   }
 
-  h3 {
-    font-size: 1.2em;
-  } 
-}
-
-/*@media screen and (max-width: 340px) {
-  header {
-    height: 43vh;
-  }
-
-  h1 {
-    font-size: 1.5em;
-    margin: 0% 0% 4% 0%;
-  }
-
-  input {
-    margin: 2% 0% 3% 18%;
+  .downvote {
+    bottom: 1.9em;
   }
 
   .save-btn {
-    margin: 4% 0% 0% 18.5%;
-    width: 66%
+    border: none;
+    font-size: 1.65em;
+    height: 15%;
+    margin: auto;
+    width: 66.6%;
   }
 
+  .upvote {
+    bottom: 1.9em;
+  }
+
+ #description-input {
+    height: 29%;
+  }
 
   #search {
-    height: 2em;
-    margin: 5% 0% 0% 17%;
-  }
-
-  h2 {
-    font-size: 1.3em;
+    margin: 1em auto;
   }
 }
-*/

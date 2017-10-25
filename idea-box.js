@@ -2,76 +2,22 @@ $(document).ready(function() {
   for (var i in localStorage) {
     displayIdea(i);
   }
- });
+});
 
 $('#title-input').focus();
-$('')
-
-$('.save-btn').on('click', function(e) {
-  e.preventDefault();
-  storeIdea();
-  clearInput();
-  });
-
-function clearInput() {
-  $('#description-input').val('');
-  $('#title-input').val('');
-  $('#title-input').focus();
-}
-
-
-function enabledButton() {
-$('.save-btn').attr('disabled', false);
-  }
-
-$('#title-input').on('keyup', enabledButton); 
-$('#description-input').on('keyup', enabledButton);
 
 function StoreCard(title, body, id, quality) {
   this.title = title;
   this.body = body;
   this.id = id;
   this.quality = quality;
-
 }
 
-$('#search').on('keyup', function() {
-  searchTitle();
-  searchBody();
-});
-
-function searchTitle() {
- var $searchValue = $('#search').val().toLowerCase();
- var $cardsTitle = $('article h2');
-
- $.each($cardsTitle, function(index, value){
-  var $cardsLowerCase = $(value).text().toLowerCase();
-  if ($cardsLowerCase.includes($searchValue) === true) {
-  var cardShow = $(value).parent('article');
-  cardShow.show();
-  } 
-else {
-  var cardShow = $(value).parent('article');
-  cardShow.hide();
-  }
- })}
-
-function searchBody() {
- var $searchValue = $('#search').val().toLowerCase();
- var $cardsBody = $('article p');
-
- $.each($cardsBody, function(index, value){
-  var $cardsLowerCase = $(value).text().toLowerCase();
-  if ($cardsLowerCase.includes($searchValue) === true) {
-  var cardShow = $(value).parent('article');
-  cardShow.show();
-  } 
-else {
-  var cardShow = $(value).parent('article');
-  cardShow.hide();
-  }
-})
-}
+$('.save-btn').on('click', function(e) {
+  e.preventDefault();
+  storeIdea();
+  clearInput();
+  });
 
 function storeIdea() {
   var $title = $('#title-input').val();
@@ -95,7 +41,6 @@ function displayIdea(id) {
 }
 
 function createIdea(title, body, id, quality) {
-  //instead of passing parameters, load from local storage
   $('.card-container').prepend(
     `<article class="container" id ="${id}">
       <h2 contenteditable="true">${title}</h2>
@@ -108,7 +53,55 @@ function createIdea(title, body, id, quality) {
     </article>`)
 }
 
-//event bubbler for vote and remove functions
+function clearInput() {
+  $('#description-input').val('');
+  $('#title-input').val('');
+  $('#title-input').focus();
+}
+
+function enabledButton() {
+$('.save-btn').attr('disabled', false);
+}
+
+$('#title-input').on('keyup', enabledButton); 
+$('#description-input').on('keyup', enabledButton);
+
+$('#search').on('keyup', function() {
+  searchTitle();
+  searchBody();
+});
+
+function searchTitle() {
+ var $searchValue = $('#search').val().toLowerCase();
+ var $cardsTitle = $('article h2');
+ $.each($cardsTitle, function(index, value){
+  var $cardsLowerCase = $(value).text().toLowerCase();
+  if ($cardsLowerCase.includes($searchValue) === true) {
+  var cardShow = $(value).parent('article');
+  cardShow.show();
+  } 
+else {
+  var cardShow = $(value).parent('article');
+  cardShow.hide();
+  }
+ })
+}
+
+function searchBody() {
+ var $searchValue = $('#search').val().toLowerCase();
+ var $cardsBody = $('article p');
+ $.each($cardsBody, function(index, value) {
+  var $cardsLowerCase = $(value).text().toLowerCase();
+  if ($cardsLowerCase.includes($searchValue) === true) {
+  var cardShow = $(value).parent('article');
+  cardShow.show();
+  } 
+  else {
+    var cardShow = $(value).parent('article');
+    cardShow.hide();
+    }
+  })
+}
 
 $('.card-container').on('blur', 'article h2', function () {
   var cardID = $(this).closest('article').attr('id');
@@ -128,10 +121,6 @@ $('.card-container').on('blur', 'article p', function() {
   var storeBody = localStorage.setItem(cardID, bodyStringify);
 });
 
-$('.card-container').on( 'click', '.delete', function() {
-  removeCard(this);
-});
-
 $('.card-container').on('click', '.upvote', function() {
   var cardQuaility = $(this).closest('article');
   var cardID = $(cardQuaility).attr('id');
@@ -146,7 +135,6 @@ $('.card-container').on('click', '.upvote', function() {
   else if (qualityDisplay.text() === 'plausible') {
     qualityDisplay.text('genius');
     pasrsedCardId.quality = 'genius';
-    
   }
     var qualityStringify = JSON.stringify(pasrsedCardId);
     var storeQuaility = localStorage.setItem(cardID, qualityStringify);
@@ -169,6 +157,10 @@ $('.card-container').on('click', '.downvote', function() {
     }
     var qualityStringify = JSON.stringify(pasrsedCardId);
     var storeQuaility = localStorage.setItem(cardID, qualityStringify);
+});
+
+$('.card-container').on( 'click', '.delete', function() {
+  removeCard(this);
 });
 
 function removeCard(e) {
