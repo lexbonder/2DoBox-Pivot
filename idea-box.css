@@ -125,6 +125,13 @@ p {
   background-color: #9AB3B1;
 }
 
+.title-missing-field,
+.body-missing-field {
+  color: #ca0707;
+  text-align: center;
+  font-size: 1.4em;
+}
+
 .upvote {
   background-image: url("images/upvote.svg");
   background-position: center;

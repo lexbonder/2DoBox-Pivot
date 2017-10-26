@@ -15,9 +15,28 @@ function StoreCard(title, body, id, quality) {
 
 $('.save-btn').on('click', function(e) {
   e.preventDefault();
-  storeIdea();
-  clearInput();
+  missingInput();
   });
+
+function missingInput() {
+  var $title = $('#title-input').val();
+  var $body = $('#description-input').val();
+  console.log($title);
+  if ($title === '') {
+    $('.title-missing-field').text('Missing title');
+    $('.body-missing-field').text('');
+  }
+  else if ($body === '') {
+    $('.body-missing-field').text('Missing description');
+    $('.title-missing-field').text('');
+  }
+  else {
+    $('.body-missing-field').text('');
+    $('.title-missing-field').text('');
+    storeIdea();
+    clearInput();
+  }
+}
 
 function storeIdea() {
   var $title = $('#title-input').val();
