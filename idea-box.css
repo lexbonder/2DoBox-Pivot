@@ -39,17 +39,27 @@ h3 {
   text-align: left;
 }
 
-input {
+input,
+textarea {
   border: 1px solid #B0B2B5;
   display: block;
-  font-size: 1em;
   height: 9%;
   margin: 1em auto;
   padding: 1% 0% 0% 1%;
   width: 55%;
+  color: #939598;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
 }
 
 input::placeholder {
+  color: #939598;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+textarea::placeholder {
   color: #939598;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4em;
@@ -178,7 +188,8 @@ p {
     margin-left: 5.4em;
   }
 
-  input {
+  input,
+  textarea {
     font-size: 0.85em;
     height: 13%;
     margin: 0% 0% 3% 17%;
@@ -215,7 +226,7 @@ p {
 
 @media screen and (max-width: 420px) {
   header {
-    height:  42vh;
+    height:  48vh;
   }
 
   h1 {
@@ -232,7 +243,8 @@ p {
     font-size: 1.2em;
   } 
 
-  input {
+  input,
+  textarea {
     font-size: 0.95em;
     height: 3vh;
     margin: .8em auto;
@@ -253,6 +265,11 @@ p {
     height: 15%;
     margin: auto;
     width: 66.6%;
+  }
+
+  .title-missing-field,
+  .body-missing-field {
+    font-size: 0.8em;
   }
 
   .upvote {
