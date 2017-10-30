@@ -112,9 +112,13 @@ p {
   object-fit: cover;
 }
 
+/*rename this*/
+
 .ideaH1 {
   color: #00A79D;
 }
+
+/*rename this kabob case*/
 
 .qualityValue {
   font-family: 'Open Sans', sans-serif;
@@ -157,6 +161,8 @@ p {
   background-repeat: no-repeat;
   object-fit: cover;
 }
+
+/*rename this to filter*/
 
 #search {
   height: 9%;
@@ -217,6 +223,8 @@ p {
     bottom: 1.6em;
   }
 
+  /*rename this to filter*/
+
   #search {
     height: 3em;
     padding: 0% 0% 0% 1%;
@@ -276,7 +284,7 @@ p {
     bottom: 1.9em;
   }
 
- #description-input {
+  #description-input {
     height: 29%;
   }
 
