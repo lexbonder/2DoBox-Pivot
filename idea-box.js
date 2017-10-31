@@ -15,15 +15,53 @@ $('#search').on('keyup', search);
 
 $('.card-container').on('click', '.upvote, .downvote', toggleQuality)
 
-$(document).ready(loadCards);
+$(document).ready(loadFirstTen);
+
+// placeholder - event listener for hold all cards function
 
 // FUNCTIONS
 
-function loadCards() {
-  for (var i = 0; i < localStorage.length; i++) {
-    displayIdea(localStorage.key(i));
+function changeQuality(event, parsedCardId, qualityDisplay, qualityArray) {
+  if (event.target.classList.contains('upvote') && parsedCardId.counter === 4) {
+    parsedCardId.counter = 4;
+  } else if (event.target.classList.contains('upvote')) {
+    parsedCardId.counter++;
+    qualityDisplay.text(qualityArray[parsedCardId.counter]);
+  } else if (event.target.classList.contains('downvote') && parsedCardId.counter === 0) {
+    parsedCardId.counter = 0;
+  } else {
+    parsedCardId.counter--;
+    qualityDisplay.text(qualityArray[parsedCardId.counter]);
   };
-};
+}
+
+function clearInput() {
+  $('#description-input').val('');
+  $('#title-input').val('');
+  $('#title-input').focus();
+}
+
+function createIdea(object) {
+  $('.card-container').prepend(
+    `<article class="container" id ="${object.id}">
+      <button class="delete"></button>
+      <h2 contenteditable="true">${object.title}</h2>
+      <p contenteditable="true">${object.body}</p>
+      <button class="upvote"></button>
+      <button class="downvote"></button>
+      <h3>quality: <span class="qualityValue">${object.qualityArray[object.counter]}</span></h3>
+      <hr>
+    </article>`)
+}
+
+function deleteCard() {
+  removeFromDOM(this);
+  removeFromLocalStorage(this); 
+}
+
+function disableButton() {
+  $('.save-btn').attr('disabled', true);
+}
 
 function displayIdea(id) {
   var getArray = localStorage.getItem(id);
@@ -36,6 +74,23 @@ function displayIdea(id) {
     counter: retreivedArray.counter
   }
   createIdea(object);
+}
+
+function enableButton() {
+  $('.save-btn').attr('disabled', false);
+}
+
+// for our show more cards button
+// function loadAllCards() {
+//   for (var i = 0; i < localStorage.length; i++) {
+//     displayIdea(localStorage.key(i));
+//   };
+// };
+
+function loadFirstTen() {
+  for (var i = (localStorage.length - 11); i < (localStorage.length); i++) {
+    displayIdea(localStorage.key(i));
+  }
 }
 
 function pullFromStorage(id) {
@@ -66,42 +121,9 @@ function toggleSaveButton() {
   }; 
 };
 
-function createIdea(object) {
-  $('.card-container').prepend(
-    `<article class="container" id ="${object.id}">
-      <button class="delete"></button>
-      <h2 contenteditable="true">${object.title}</h2>
-      <p contenteditable="true">${object.body}</p>
-      <button class="upvote"></button>
-      <button class="downvote"></button>
-      <h3>quality: <span class="qualityValue">${object.qualityArray[object.counter]}</span></h3>
-      <hr>
-    </article>`)
-}
-
-function clearInput() {
-  $('#description-input').val('');
-  $('#title-input').val('');
-  $('#title-input').focus();
-}
-
-
-function deleteCard() {
-  removeFromDOM(this);
-  removeFromLocalStorage(this); 
-}
-
 function putIntoStorage(object) {
   var stringifiedObject = JSON.stringify(object);
   localStorage.setItem(object['id'], stringifiedObject);
-}
-
-function disableButton() {
-  $('.save-btn').attr('disabled', true);
-}
-
-function enableButton() {
-  $('.save-btn').attr('disabled', false);
 }
 
 function removeFromLocalStorage(event) {
@@ -120,6 +142,13 @@ function saveCard() {
   clearInput();
   };
 
+function StoreCard(title, body, id, quality, counter = 2) {
+  this.title = title;
+  this.body = body;
+  this.id = id;
+  this.quality = quality;
+  this.counter = counter;
+};
 
 function storeIdea() {
   var $title = $('#title-input').val();
@@ -131,15 +160,6 @@ function storeIdea() {
   localStorage.setItem($id, stringified);
   displayIdea($id);
 }
-
-function StoreCard(title, body, id, quality, counter = 2) {
-  this.title = title;
-  this.body = body;
-  this.id = id;
-  this.quality = quality;
-  this.counter = counter;
-};
-
 
 function pullFromStorage(id) {
   var pullCardID = localStorage.getItem(id);
@@ -158,20 +178,6 @@ function search() {
     }
   }
 };
-
-function changeQuality(event, parsedCardId, qualityDisplay, qualityArray) {
-  if (event.target.classList.contains('upvote') && parsedCardId.counter === 4) {
-    parsedCardId.counter = 4;
-  } else if (event.target.classList.contains('upvote')) {
-    parsedCardId.counter++;
-    qualityDisplay.text(qualityArray[parsedCardId.counter]);
-  } else if (event.target.classList.contains('downvote') && parsedCardId.counter === 0) {
-    parsedCardId.counter = 0;
-  } else {
-    parsedCardId.counter--;
-    qualityDisplay.text(qualityArray[parsedCardId.counter]);
-  };
-}
 
 function toggleQuality() {
   var cardQuality = $(this).closest('article');
