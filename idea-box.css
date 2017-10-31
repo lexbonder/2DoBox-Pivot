@@ -39,8 +39,7 @@ h3 {
   text-align: left;
 }
 
-input,
-textarea {
+.user-input{
   border: 1px solid #B0B2B5;
   display: block;
   height: 9%;
@@ -52,14 +51,7 @@ textarea {
   font-weight: 600;
 }
 
-input::placeholder {
-  color: #939598;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.4em;
-  font-weight: 600;
-}
-
-textarea::placeholder {
+.user-input::placeholder {
   color: #939598;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.4em;
@@ -72,44 +64,43 @@ p {
   font-size: 1.5em;
 }
 
-.circle {
+.button {
   border-radius: 50%;
   display: inline-block;
   height: 1.2em;
   position: absolute;
   width: 1.2em;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .delete {
   background-image: url("images/delete.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
   right: 0;
   top: .2em;
 }
 
 .delete:hover {
   background-image: url("images/delete-hover.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
 }
 
+.upvote {
+  background-image: url("images/upvote.svg");
+  bottom: 2em;
+  left: 0;
+}
+.upvote:hover {
+  background-image: url("images/upvote-hover.svg");
+}
 .downvote {
   background-image: url("images/downvote.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  bottom: 2em;
   left: 2em;
-  object-fit: cover;
+  bottom: 2em;
 }
 
 .downvote:hover {
   background-image: url("images/downvote-hover.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
 }
 
 /*rename this*/
@@ -146,21 +137,7 @@ p {
   font-size: 1.4em;
 }
 
-.upvote {
-  background-image: url("images/upvote.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  bottom: 2em;
-  left: 0;
-  object-fit: cover;
-}
 
-.upvote:hover {
-  background-image: url("images/upvote-hover.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  object-fit: cover;
-}
 
 /*rename this to filter*/
 
