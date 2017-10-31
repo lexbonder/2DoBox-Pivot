@@ -143,50 +143,30 @@ function StoreCard(title, body, id, quality) {
 // make these one function ----------------------
 // these cancel each other out --------------
 // rename to filter?
-$('#search').on('keyup', function() {
-  searchTitle();
-});
+$('#search').on('keyup', search);
 
-$('#search').on('keyup', function() {
-  searchBody();
-});
+// $('#search').on('keyup', function() {
+//   searchBody();
+// });
 // ------------------------------------------
-function searchTitle() {
- var $searchValue = $('#search').val().toLowerCase();
- var $cardsTitle = $('article h2');
- $.each($cardsTitle, function(index, value){
-  var $cardsLowerCase = $(value).text().toLowerCase();
-  if ($cardsLowerCase.includes($searchValue) === true) {
-  var cardShow = $(value).parent('article');
-  cardShow.show();
-  } 
-  else {
-    var cardShow = $(value).parent('article');
-    cardShow.hide();
-    }
- })
+
+function pullFromStorage(id) {
+  var pullCardID = localStorage.getItem(id);
+  var parsedCardId = JSON.parse(pullCardID);
+  return parsedCardId; 
 }
 
-// DRY up with an || statement
-
-function searchBody() {
-  console.log('searching body')
- var $searchValue = $('#search').val().toLowerCase();
- var $cardsBody = $('article p');
- $.each($cardsBody, function(index, value) {
-  var $cardsLowerCase = $(value).text().toLowerCase();
-  if ($cardsLowerCase.includes($searchValue) === true) {
-  var cardShow = $(value).parent('article');
-  cardShow.show();
-  } 
-  else {
-    var cardShow = $(value).parent('article');
-    cardShow.hide();
+function search() {
+ var filteredText = $(this).val().toUpperCase();
+   for (var i = 0; i < localStorage.length; i++) {
+    var parsedObject = pullFromStorage(localStorage.key(i));
+    if (parsedObject['title'].toUpperCase().includes(filteredText) || parsedObject['body'].toUpperCase().includes(filteredText)) {
+      $(`#${parsedObject['id']}`).css( "display", "block" );
+    } else {
+      $(`#${parsedObject['id']}`).css( "display", "none");
     }
-  })
-}
-//  ----------------------------------------------------------
-
+  }
+};
 
 // come back to experiment with making these shorter
 // QUALITY DOES NOT PERSIST, REVERTS TO NORMAL. ARRAY DOES PERSIST.
