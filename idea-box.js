@@ -50,12 +50,12 @@ function toggleSaveButton() {
 function createIdea(object) {
   $('.card-container').prepend(
     `<article class="container" id ="${object.id}">
+      <button class="delete"></button>
       <h2 contenteditable="true">${object.title}</h2>
-      <div class="button delete"></div>
       <p contenteditable="true">${object.body}</p>
+      <button class="upvote"></button>
+      <button class="downvote"></button>
       <h3>quality: <span class="qualityValue">${object.quality}</span></h3>
-      <div class="button upvote"> </div>
-      <div class="button downvote"> </div>
       <hr>
     </article>`)
 }

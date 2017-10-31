@@ -64,15 +64,17 @@ p {
   font-size: 1.5em;
 }
 
-.button {
+article button {
   border-radius: 50%;
   display: inline-block;
-  height: 1.2em;
+  height: 30px;
   position: absolute;
-  width: 1.2em;
+  width: 30px;
   object-fit: cover;
+  background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
+  border: none;
 }
 
 .delete {
@@ -95,7 +97,7 @@ p {
 }
 .downvote {
   background-image: url("images/downvote.svg");
-  left: 2em;
+  left: 4em;
   bottom: 2em;
 }
 
