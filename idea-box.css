@@ -124,17 +124,21 @@ article button {
   background-image: url("images/downvote-hover.svg");
 }
 
-/*.complete {
-  background-image: url("images/complete.svg");
-  right: 4em;
+.complete {
+  border-radius: 0;
+  right: 3em;
   bottom: 2em;
-  height: ;
+  height: 25px;
+  width: 75px;
+  background-color: #9AB3B1;
+  border: none;
+  color: #FFFFFF;
 }
 
-.completed:hover {
-  background-image: url("images/complete-hover.svg");
+.complete:hover {
+  background-color: #4BA59E;
 }
-*/
+
 /*rename this*/
 
 .ideaH1 {

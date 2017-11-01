@@ -52,7 +52,7 @@ function createIdea(object) {
       <button class="downvote"></button>
       <h3>importance: <span class="qualityValue">${object.qualityArray[object.counter]}</span></h3>
       <hr>
-      <button class="complete"></button>
+      <button class="complete">complete</button>
     </article>`);
 };
 
