@@ -117,7 +117,8 @@ article button {
   font-family: 'Open Sans', sans-serif;
 }
 
-.save-btn {
+.save-btn,
+.show-more-button {
   background-color: #4BA59E;
   border: none;
   color: #FFFFFF;
