@@ -20,6 +20,8 @@ $(document).ready(reloadCards);
 // placeholder - event listener for hold all cards function //
 $('.show-more-button').on('click', toggleShowMoreCards);
 
+$('.complete')
+
 // FUNCTIONS
 
 function changeQuality(event, parsedCardId, qualityDisplay, qualityArray) {
@@ -52,7 +54,7 @@ function createIdea(object) {
       <button class="downvote"></button>
       <h3>importance: <span class="qualityValue">${object.qualityArray[object.counter]}</span></h3>
       <hr>
-      <button class="complete"></button>
+      <button class="complete">complete</button>
     </article>`);
 };
 
