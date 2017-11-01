@@ -10,29 +10,31 @@
   </head>
   <body>
     <header>
-      <h1>To<span class="ideaH1">Do</span>Box</h1>
+      <h1 id="logo-heading">To<span class="ideaH1">Do</span>Box</h1>
       <input class="user-input" aria-role="input" aria-required="true" type="text" id="title-input" placeholder="Title">
       <textarea class="user-input" aria-role="input" type="text" id="description-input" placeholder="Body"></textarea>
       <button class="save-btn" type="submit" disabled>Save Idea</button>
-      <form>
-        <fieldset><legend>Filter ToDo's by Importance:</legend>
-          <div>
-            <input type="checkbox" id="critical">
-            <label for="critical">Critical</label>
-          </div>
-          <input type="checkbox" id="high">
-          <label for="high">High</label>
-          <input type="checkbox" id="normal">
-          <label for="normal">Normal</label>
-          <input type="checkbox" id="low">
-          <label for="low">Low</label>
-          <input type="checkbox" id="none">
-          <label for="none">None</label>
-        </fieldset>
-      </form>
+
     </header>
     <section>
-      <input aria-role="search" type="text" class="user-input" id="search" placeholder="Filter By Title/Details">
+      <input aria-role="search" type="text" class="user-input" id="search" placeholder="Show me...">
+        <div id="form-styling-div">
+            <button class="importance-button">Critical</button>
+            <button class="importance-button">High</button>
+            <button class="importance-button">Normal</button>
+            <button class="importance-button">Low</button>
+            <button class="importance-button">None</button>
+<!--             <input class="checkbox-item" type="checkbox" id="critical">
+            <label class="checkbox-item" for="critical"></label>
+            <input class="checkbox-item" type="checkbox" id="high">
+            <label class="checkbox-item" for="high"></label>
+            <input class="checkbox-item" type="checkbox" id="normal">
+            <label class="checkbox-item" for="normal"></label>
+            <input class="checkbox-item" type="checkbox" id="low">
+            <label class="checkbox-item" for="low"></label>
+            <input class="checkbox-item" type="checkbox" id="none">
+            <label class="checkbox-item" for="none"></label> -->
+        </div>
       <section class="card-container"></section>
     </section>
     <button class="show-more-button">Show more...</button>

@@ -50,8 +50,9 @@ function createIdea(object) {
       <p contenteditable="true">${object.body}</p>
       <button class="upvote"></button>
       <button class="downvote"></button>
-      <h3>quality: <span class="qualityValue">${object.qualityArray[object.counter]}</span></h3>
+      <h3>importance: <span class="qualityValue">${object.qualityArray[object.counter]}</span></h3>
       <hr>
+      <button class="complete"></button>
     </article>`);
 };
 

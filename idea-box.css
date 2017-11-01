@@ -1,3 +1,8 @@
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600; 
+}
+
 article {
   height: 50%;
   margin: 1em auto;
@@ -12,8 +17,18 @@ body {
 
 header {
   background-color: #E5F3F2;
-  height: 59vh;
+  height: 35vh;
   width: 100%;
+}
+
+.importance-button {
+
+}
+
+#form-styling-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 h1 {
@@ -26,10 +41,14 @@ h1,
 h2 {
   color: #6D6E71;
   font-family: 'Roboto Slab', serif;
+  overflow: hidden;
 }
 
 h2 {
   font-size: 1.6em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 50%;
 }
 
 h3 {
@@ -105,6 +124,17 @@ article button {
   background-image: url("images/downvote-hover.svg");
 }
 
+/*.complete {
+  background-image: url("images/complete.svg");
+  right: 4em;
+  bottom: 2em;
+  height: ;
+}
+
+.completed:hover {
+  background-image: url("images/complete-hover.svg");
+}
+*/
 /*rename this*/
 
 .ideaH1 {
@@ -133,15 +163,6 @@ article button {
   background-color: #9AB3B1;
 }
 
-.title-missing-field,
-.body-missing-field {
-  color: #ca0707;
-  text-align: center;
-  font-size: 1.4em;
-}
-
-
-
 /*rename this to filter*/
 
 #search {
@@ -155,6 +176,10 @@ article button {
     height: 50%;
     margin: auto;
     width: 64%;
+  }
+
+  #form-styling-div {
+    flex-direction: column;
   }
   
   header {
