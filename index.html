@@ -18,23 +18,25 @@
     </header>
     <section>
       <input aria-role="search" type="text" class="user-input" id="search" placeholder="Show me...">
-        <div id="form-styling-div">
-            <button class="importance-button">Critical</button>
-            <button class="importance-button">High</button>
-            <button class="importance-button">Normal</button>
-            <button class="importance-button">Low</button>
-            <button class="importance-button">None</button>
-<!--             <input class="checkbox-item" type="checkbox" id="critical">
-            <label class="checkbox-item" for="critical"></label>
-            <input class="checkbox-item" type="checkbox" id="high">
-            <label class="checkbox-item" for="high"></label>
-            <input class="checkbox-item" type="checkbox" id="normal">
-            <label class="checkbox-item" for="normal"></label>
-            <input class="checkbox-item" type="checkbox" id="low">
-            <label class="checkbox-item" for="low"></label>
-            <input class="checkbox-item" type="checkbox" id="none">
-            <label class="checkbox-item" for="none"></label> -->
-        </div>
+        <form id="form-styling">
+          <button class="importance-button" id="4">Critical</button>
+          <button class="importance-button" id="3">High</button>
+          <button class="importance-button" id="2">Normal</button>
+          <button class="importance-button" id="1">Low</button>
+          <button class="importance-button" id="0">None</button>
+          <button class="reset-button">Show All</button>
+
+            <!-- <input class="checkbox-item" type="checkbox" id="4">
+            <label class="checkbox-item" for="critical">Critical</label>
+            <input class="checkbox-item" type="checkbox" id="3">
+            <label class="checkbox-item" for="high">High</label>
+            <input class="checkbox-item" type="checkbox" id="2">
+            <label class="checkbox-item" for="normal">Normal</label>
+            <input class="checkbox-item" type="checkbox" id="1">
+            <label class="checkbox-item" for="low">Low</label>
+            <input class="checkbox-item" type="checkbox" id="0">
+            <label class="checkbox-item" for="none">None</label> -->
+        </form>
       <section class="card-container"></section>
     </section>
     <button class="show-more-button">Show more...</button>

@@ -21,6 +21,25 @@ $(document).ready(reloadCards);
 $('.show-more-button').on('click', toggleShowMoreCards);
 
 // FUNCTIONS
+$('.reset-button').on('click', reloadCards);
+
+$('.importance-button').on('click', filterByImportance);
+
+function filterByImportance() {
+  event.preventDefault();
+  $('article').remove();
+  hideShowMoreButton();
+  loadAllCards();
+  for (var i = 0; i < localStorage.length; i++) {
+    var parsedObject = pullFromStorage(localStorage.key(i));
+    if (parsedObject.counter === parseInt(this.id)) {
+      $(`#${parsedObject['id']}`).css('display', 'block');
+    } else {
+      $(`#${parsedObject['id']}`).css('display', 'none');
+    };
+  };
+};
+
 
 function changeQuality(event, parsedCardId, qualityDisplay, qualityArray) {
   if (event.target.classList.contains('upvote') && parsedCardId.counter === 4) {
