@@ -12,12 +12,20 @@ And the original repo here:
 
 https://github.com/cbdallavalle/idea-box
 
-Initial Comp:
+### Initial Comp:
+
+#### Desktop
 ![ideabox-01](https://user-images.githubusercontent.com/24358415/32330873-0c8f5a50-bfa7-11e7-8330-5f3ba1fadbe9.png)
+
+#### Mobile
 ![ideabox-02](https://user-images.githubusercontent.com/24358415/32330877-0e404378-bfa7-11e7-8a58-9b7d2ffa1e11.png)
 
-ToDoBox Phase 2:
+### ToDoBox Phase 2:
+
+#### Desktop
 ![todobox-desktop](https://user-images.githubusercontent.com/24358415/32330879-1017dba2-bfa7-11e7-9a94-eeaf2f14b0e0.png)
+
+#### Mobile
 ![todobox-mobile](https://user-images.githubusercontent.com/24358415/32330885-131af03c-bfa7-11e7-8df2-22f08885d699.png)
 
 ## Authors
