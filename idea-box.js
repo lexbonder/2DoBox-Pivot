@@ -27,6 +27,32 @@ $('.reset-button').on('click', reloadCards);
 
 $('.importance-button').on('click', filterByImportance);
 
+// INCOMPLETE FUNCTIONALITY FOR SHOW COMPLETED CARDS
+
+// $('.card-container').on('click', '.complete', markCardAsComplete);
+
+// function markCardAsComplete() {
+//   var completedTask = $(this).closest('article');
+//   console.log('complete button hit')
+//   var cardID = $(completedTask).attr('id');
+//   var parsedCardId = pullFromStorage(cardID);
+//   parsedCardId.completed = true;
+//   console.log(parsedCardId);
+//   completedTask.addClass('completed');
+//   putIntoStorage(parsedCardId);
+// };
+
+// function filterIncomplete() {
+//   var objectArray = []
+//     for (var i = 0; i < localStorage.length; i++) {
+//       objectArray.push(pullFromStorage(localStorage.key(i)));
+//       var incompleteTasks = objectArray.filter(function(value) {
+//       return value['completed'] === false;
+//     });
+//   };
+// }
+
+
 function filterByImportance() {
   event.preventDefault();
   $('article').remove();
@@ -73,7 +99,7 @@ function createIdea(object) {
       <button class="downvote"></button>
       <h3>importance: <span class="qualityValue">${object.qualityArray[object.counter]}</span></h3>
       <hr>
-      <button class="complete">complete</button>
+      <button class="complete"></button>
     </article>`);
 };
 
@@ -136,7 +162,7 @@ function loadAllCards() {
   for (var i = 0; i < localStorage.length; i++) {
     displayIdea(localStorage.key(i));
   };
-};
+}
 
 function hideShowMoreButton() {
   $('.show-more-button').css('display', 'none');
@@ -204,6 +230,7 @@ function StoreCard(title, body, id, quality, counter = 2) {
   this.id = id;
   this.quality = quality;
   this.counter = counter;
+  this.completed = false;
 };
 
 function storeIdea() {

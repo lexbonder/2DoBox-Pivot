@@ -124,7 +124,8 @@ article button {
   background-image: url("images/downvote-hover.svg");
 }
 
-.complete {
+/*couldn't complete the functionality for 'show incomplete todos'*/
+/*.complete {
   background-color: #9AB3B1;
   border: none;
   color: #FFFFFF;
@@ -135,9 +136,14 @@ article button {
   width: 75px;
 }
 
-.completed:hover {
+.complete:hover {
   background-color: #4BA59E;
 }
+
+article.completed {
+  background: rgba(0,0,0,.5);
+}*/
+
 
 /*rename this*/
 
