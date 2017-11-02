@@ -31,3 +31,5 @@ function printFilterResults(searchedArray) {
     displayIdea(results);
   })
 };
+
+
