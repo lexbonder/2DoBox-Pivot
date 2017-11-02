@@ -129,31 +129,31 @@ article button {
 }
 
 .delete {
-  background-image: url("images/delete.svg");
+  background-image: url("../images/delete.svg");
   right: 0;
   top: .2em;
 }
 
 .delete:hover {
-  background-image: url("images/delete-hover.svg");
+  background-image: url("../images/delete-hover.svg");
 }
 
 .upvote {
-  background-image: url("images/upvote.svg");
+  background-image: url("../images/upvote.svg");
   bottom: 27px;
   left: 0;
 }
 .upvote:hover {
-  background-image: url("images/upvote-hover.svg");
+  background-image: url("../images/upvote-hover.svg");
 }
 .downvote {
-  background-image: url("images/downvote.svg");
+  background-image: url("../images/downvote.svg");
   left: 45px;
   bottom: 27px;
 }
 
 .downvote:hover {
-  background-image: url("images/downvote-hover.svg");
+  background-image: url("../images/downvote-hover.svg");
 }
 
 /*IMPORTANCE BUTTONS*/
@@ -196,28 +196,6 @@ article button {
 .critical.selected {
   background-color: #DB4D48;
 }
-
-/*couldn't complete the functionality for 'show incomplete todos'*/
-/*.importance-button {}*/
-
-/*.complete {
-  background-color: #9AB3B1;
-  border: none;
-  color: #FFFFFF;
-  display: block;
-  right: 4em;
-  bottom: 2em;
-  border-radius: 0;
-  width: 75px;
-}
-
-.complete:hover {
-  background-color: #4BA59E;
-}
-
-article.completed {
-  background: rgba(0,0,0,.5);
-}*/
 
 @media screen and (max-width: 1004px) {
   article,
@@ -269,3 +247,25 @@ article.completed {
     font-size: 1.2em;
   }
 }
+
+/*couldn't complete the functionality for 'show incomplete todos'*/
+/*.importance-button {}*/
+
+/*.complete {
+  background-color: #9AB3B1;
+  border: none;
+  color: #FFFFFF;
+  display: block;
+  right: 4em;
+  bottom: 2em;
+  border-radius: 0;
+  width: 75px;
+}
+
+.complete:hover {
+  background-color: #4BA59E;
+}
+
+article.completed {
+  background: rgba(0,0,0,.5);
+}*/
