@@ -1,5 +1,32 @@
-The link bellow outlines the Idea Box project guidelines.
+# ToDoBox
+
+In this project, we took an existing repo for a project called IdeaBox and pivoted to an app called ToDoBox. In this project, we refactored the existing repo's code, completed the search/filter functionality, added functionality for filtering by importance, and changed the user interface. You can find the instructions for the first project here:
 
 http://frontend.turing.io/projects/ideabox.html
 
-We created a design that replicated the one given to us which was responsive on different screen sizes. We learned how to commit information into local storage, access that information, and then use it and change it on the screen. This allowed us to successfully append cards that had information stored in local storage and change them if the user wanted. Also, if the user deletes the card it is removed from the page, as well as, local storage. Lastly, we created a search function that searches for the letters or word the user is looking for and displays the cards that only contain the search input.
+The ToDoBox requirements here:
+
+http://frontend.turing.io/projects/2DoBox-Pivot-Mod1.html
+
+And the original repo here:
+
+https://github.com/cbdallavalle/idea-box
+
+Initial Comp:
+![ideabox-01](https://user-images.githubusercontent.com/24358415/32330873-0c8f5a50-bfa7-11e7-8330-5f3ba1fadbe9.png)
+![ideabox-02](https://user-images.githubusercontent.com/24358415/32330877-0e404378-bfa7-11e7-8a58-9b7d2ffa1e11.png)
+
+ToDoBox Phase 2:
+![todobox-desktop](https://user-images.githubusercontent.com/24358415/32330879-1017dba2-bfa7-11e7-9a94-eeaf2f14b0e0.png)
+![todobox-mobile](https://user-images.githubusercontent.com/24358415/32330885-131af03c-bfa7-11e7-8df2-22f08885d699.png)
+
+## Authors
+
+* **Casey Dallevalle** - *Initial work* - [Casey](https://github.com/cbdallavalle)
+* **Sabrina Kennedy** - *Initial work* - [Sabrina](https://github.com/skenne21)
+* **Melissa Wagasky** - *Phase 2* - [Melissa](https://github.com/wagasky)
+* **Alex Bonder** - *Phase 2* - [Alex](https://github.com/lexbonder)
+
+## Acknowledgments
+
+* Thank you to Casey and Sabrina for kicking off this project!!
