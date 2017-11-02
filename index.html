@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
-<!-- test putting in a reset or normalize file -->
+<html lang="en">
   <head>
     <title>ToDoBox</title>
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="idea-box.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
@@ -14,29 +14,17 @@
       <input class="user-input" aria-role="input" aria-required="true" type="text" id="title-input" placeholder="Title">
       <textarea class="user-input" aria-role="input" type="text" id="description-input" placeholder="Body"></textarea>
       <button class="save-btn" type="submit" disabled>Save Idea</button>
-
     </header>
     <section>
-      <input aria-role="search" type="text" class="user-input" id="search" placeholder="Show me...">
-        <form id="form-styling">
-          <button class="importance-button" id="4">Critical</button>
-          <button class="importance-button" id="3">High</button>
-          <button class="importance-button" id="2">Normal</button>
-          <button class="importance-button" id="1">Low</button>
-          <button class="importance-button" id="0">None</button>
-          <button class="reset-button">Show All</button>
-
-            <!-- <input class="checkbox-item" type="checkbox" id="4">
-            <label class="checkbox-item" for="critical">Critical</label>
-            <input class="checkbox-item" type="checkbox" id="3">
-            <label class="checkbox-item" for="high">High</label>
-            <input class="checkbox-item" type="checkbox" id="2">
-            <label class="checkbox-item" for="normal">Normal</label>
-            <input class="checkbox-item" type="checkbox" id="1">
-            <label class="checkbox-item" for="low">Low</label>
-            <input class="checkbox-item" type="checkbox" id="0">
-            <label class="checkbox-item" for="none">None</label> -->
-        </form>
+      <input aria-role="search" type="text" class="user-input" id="filter" placeholder="Filter...">
+      <form id="button-wrapper">
+        <button class="importance-button none" id="0">None</button>
+        <button class="importance-button low" id="1">Low</button>
+        <button class="importance-button normal" id="2">Normal</button>
+        <button class="importance-button high" id="3">High</button>
+        <button class="importance-button critical" id="4">Critical</button>
+        <button class="reset-button">Show All</button>
+      </form>
       <section class="card-container"></section>
     </section>
     <button class="show-more-button">Show more...</button>
@@ -44,11 +32,3 @@
     <script src="idea-box.js" type ="text/javascript"></script>
   </body>
 </html>
-
-
-
-
-
-<!-- aria roles for labels -->
-<!-- change placeholders for new functionality -->
-<!-- remove the p classes for the error messages that we don't need anymore -->
