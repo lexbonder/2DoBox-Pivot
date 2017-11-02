@@ -1,28 +1,28 @@
 // EVENT LISTENERS
 
+$('#title-input').focus();
+
 $(document).ready(reloadCards);
 
-$('.card-container').on('blur', 'article h2', saveTitle);
+$('#filter').on('keyup', filter);
+
+$('.save-btn').on('click', saveCard);
+
+$('.reset-button').on('click', reloadCards);
+
+$('#title-input').on('keyup', toggleSaveButton);
 
 $('.card-container').on('blur', 'article p', saveBody);
 
 $('.card-container').on('click', '.delete', deleteCard);
 
-$('.card-container').on('click', '.upvote, .downvote', toggleQuality);
-
-$('#filter').on('keyup', filter);
-
 $('.importance-button').on('click', filterByImportance);
-
-$('.reset-button').on('click', reloadCards);
-
-$('.save-btn').on('click', saveCard);
 
 $('.show-more-button').on('click', toggleShowMoreCards);
 
-$('#title-input').focus();
+$('.card-container').on('blur', 'article h2', saveTitle);
 
-$('#title-input').on('keyup', toggleSaveButton);
+$('.card-container').on('click', '.upvote, .downvote', toggleQuality);
 
 // FUNCTIONS
 
@@ -46,7 +46,7 @@ function clearInput() {
   $('#title-input').focus();
 };
 
-function createIdea(object) {
+function createCard(object) {
   $('.card-container').prepend(
     `<article class="container" id ="${object.id}">
       <button class="delete"></button>
@@ -60,7 +60,7 @@ function createIdea(object) {
 };
 
 function deleteCard() {
-  removeFromDOM(this);
+  removeFromDom(this);
   removeFromLocalStorage(this);
   reloadCards(); 
 };
@@ -69,7 +69,7 @@ function disableButton() {
   $('.save-btn').attr('disabled', true);
 };
 
-function displayIdea(id) {
+function displayCard(id) {
   var getArray = localStorage.getItem(id);
   var retrievedArray = JSON.parse(getArray);
   var object = {
@@ -79,7 +79,7 @@ function displayIdea(id) {
     qualityArray: ['none','low', 'normal', 'high', 'critical'],
     counter: retrievedArray.counter
   };
-  createIdea(object);
+  createCard(object);
 };
 
 function enableButton() {
@@ -124,26 +124,15 @@ function filterByImportance() {
   $(this).addClass('selected');
 };
 
-function reloadCards() {
-  $('article').remove();
-  if (localStorage.length > 10) {
-    revealShowMoreButton();
-    loadFirstTen();
-  } else {
-    hideShowMoreButton();
-    loadAllCards();
-  };
-};
-
 function loadFirstTen() {
   for (var i = (localStorage.length - 10); i < (localStorage.length); i++) {
-    displayIdea(localStorage.key(i));
+    displayCard(localStorage.key(i));
   };
 };
 
 function loadAllCards() {
   for (var i = 0; i < localStorage.length; i++) {
-    displayIdea(localStorage.key(i));
+    displayCard(localStorage.key(i));
   };
 };
 
@@ -167,7 +156,18 @@ function putIntoStorage(object) {
   localStorage.setItem(object['id'], stringifiedObject);
 };
 
-function removeFromDOM(event) {
+function reloadCards() {
+  $('article').remove();
+  if (localStorage.length > 10) {
+    revealShowMoreButton();
+    loadFirstTen();
+  } else {
+    hideShowMoreButton();
+    loadAllCards();
+  };
+};
+
+function removeFromDom(event) {
   var cardToDel = $(event).closest('article');
   cardToDel.remove();
 };
@@ -186,7 +186,7 @@ function saveBody() {
 };
 
 function saveCard() {
-  storeIdea();
+  storeCard();
   clearInput();
   disableButton();
   reloadCards();
@@ -208,7 +208,7 @@ function StoreCard(title, body, id, quality, counter = 2) {
   this.completed = false;
 };
 
-function storeIdea() {
+function storeCard() {
   var $title = $('#title-input').val();
   var $body = $('#description-input').val();
   var $id = Date.now();
@@ -216,7 +216,7 @@ function storeIdea() {
   var storeCard = new StoreCard($title, $body, $id, $quality);
   var stringified = JSON.stringify(storeCard);
   localStorage.setItem($id, stringified);
-  displayIdea($id);
+  displayCard($id);
 };
 
 function toggleSaveButton() {
@@ -272,24 +272,3 @@ function toggleQuality() {
 //     });
 //   };
 // }
-
-// add two event listeners for 'enter button' functionality -------
-
-// come back later - getting an error message for this:
-
-// $('.card-container').keypress('article h2', function(event) {
-//   if (event.keyCode === 13) {
-//     event.preventDefault();
-//     updateTitle();
-//   }
-// });
-
-// function updateTitle() {
-//   var cardID = $(this).closest('article').attr('id');
-//   var pullCardID = localStorage.getItem(cardID);
-//   var parsedCardId = JSON.parse(pullCardID);
-//   parsedCardId.title = $(this).text();
-//   putIntoStorage(parsedCardId);
-// }
-
-// -----------------------------------------------------------------
