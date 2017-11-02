@@ -20,6 +20,8 @@ $(document).ready(reloadCards);
 // placeholder - event listener for hold all cards function //
 $('.show-more-button').on('click', toggleShowMoreCards);
 
+$('.complete')
+
 // FUNCTIONS
 $('.reset-button').on('click', reloadCards);
 

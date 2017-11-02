@@ -125,17 +125,17 @@ article button {
 }
 
 .complete {
-  border-radius: 0;
-  right: 3em;
-  bottom: 2em;
-  height: 25px;
-  width: 75px;
   background-color: #9AB3B1;
   border: none;
   color: #FFFFFF;
+  display: block;
+  right: 4em;
+  bottom: 2em;
+  border-radius: 0;
+  width: 75px;
 }
 
-.complete:hover {
+.completed:hover {
   background-color: #4BA59E;
 }
 
