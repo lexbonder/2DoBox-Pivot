@@ -1,99 +1,131 @@
 * {
+  box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
   font-weight: 600; 
 }
 
-article {
-  height: 50%;
-  margin: 1em auto;
-  position: relative;
-  width: 57%;
+*:focus {
+  outline: none;
 }
 
 body {
+  margin: 0;
   background-color: #FFFFFF;
-  margin: 0em;
 }
 
 header {
-  background-color: #E5F3F2;
-  height: 35vh;
+  height: 280px;
   width: 100%;
+  background-color: #E5F3F2;
 }
 
-.importance-button {
-
-}
-
-#form-styling-div {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+article {
+  position: relative;
+  height: fit-content;
+  margin: 10px auto;
+  width: 50%;
 }
 
 h1 {
   margin: 0;
-  padding: .5em 0em;
+  padding: 10px 0 0;
   text-align: center;
+}
+
+h1 span {
+  color: #00A79D;
 }
 
 h1,
 h2 {
   color: #6D6E71;
   font-family: 'Roboto Slab', serif;
-  overflow: hidden;
 }
 
 h2 {
+  max-height: 62px;
+  width: 89%;
+  overflow: auto;
   font-size: 1.6em;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 50%;
 }
 
 h3 {
+  margin-left: 4.4em;
   color: #6D6E71;
   font-size: 1.3em;
-  margin-left: 4.4em;
   text-align: left;
 }
 
-.user-input{
-  border: 1px solid #B0B2B5;
-  display: block;
-  height: 9%;
-  margin: 1em auto;
-  padding: 1% 0% 0% 1%;
-  width: 55%;
-  color: #939598;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 600;
-}
-
-.user-input::placeholder {
-  color: #939598;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.4em;
-  font-weight: 600;
-}
-
 p {
+  max-width: 95%;
+  max-height: 100px;
+  overflow: auto;
   color: #939598;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5em;
 }
 
+.user-input {
+  border: 1px solid #B0B2B5;
+  display: block;
+  height: 2em;
+  margin: 20px auto;
+  padding: 10px;
+  width: 50%;
+  color: #939598;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.user-input::placeholder {
+  color: #939598;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  font-weight: 600;
+}
+
+.quality-value {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.save-btn,
+.show-more-button {
+  border: none;
+  border-radius: 0;
+  display: block;
+  height: 2em;
+  margin: 20px auto;
+  width: 50%;
+  background-color: #4BA59E;
+  color: #FFFFFF;
+  font-size: 1.5em;
+}
+
+.save-btn:disabled {
+  background-color: #9AB3B1;
+}
+
+#button-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
+  width: 50%;
+}
+
+/*UPVOTE/DOWNVOTE BUTTONS*/
+
 article button {
-  border-radius: 50%;
-  display: inline-block;
-  height: 30px;
   position: absolute;
-  width: 30px;
   object-fit: cover;
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
   border: none;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
 }
 
 .delete {
@@ -108,7 +140,7 @@ article button {
 
 .upvote {
   background-image: url("images/upvote.svg");
-  bottom: 2em;
+  bottom: 27px;
   left: 0;
 }
 .upvote:hover {
@@ -116,15 +148,58 @@ article button {
 }
 .downvote {
   background-image: url("images/downvote.svg");
-  left: 4em;
-  bottom: 2em;
+  left: 45px;
+  bottom: 27px;
 }
 
 .downvote:hover {
   background-image: url("images/downvote-hover.svg");
 }
 
+/*IMPORTANCE BUTTONS*/
+
+.importance-button,
+.reset-button {
+  height: 2em;
+  width: 120px;
+  background-color: #939598;
+  border: 1px solid #6D6E71;
+  border-radius: 0;
+  color: white;
+}
+
+.reset-button:hover {
+  background-color: #4BA59E;
+}
+
+.none:hover,
+.none.selected {
+  background-color: #48A171;
+}
+
+.low:hover,
+.low.selected {
+  background-color: #457FC1;
+}
+
+.normal:hover,
+.normal.selected {
+  background-color: #F2D748;
+}
+
+.high:hover,
+.high.selected {
+  background-color: #F39E47;
+}
+
+.critical:hover,
+.critical.selected {
+  background-color: #DB4D48;
+}
+
 /*couldn't complete the functionality for 'show incomplete todos'*/
+/*.importance-button {}*/
+
 /*.complete {
   background-color: #9AB3B1;
   border: none;
@@ -144,166 +219,53 @@ article.completed {
   background: rgba(0,0,0,.5);
 }*/
 
-
-/*rename this*/
-
-.ideaH1 {
-  color: #00A79D;
+@media screen and (max-width: 1004px) {
+  article,
+  .user-input,
+  .save-btn,
+  .show-more-button,
+  #button-wrapper {
+    width: 60%;
+  }
 }
 
-/*rename this kabob case*/
-
-.qualityValue {
-  font-family: 'Open Sans', sans-serif;
+@media screen and (max-width: 836px) {
+  article,
+  .user-input,
+  .save-btn,
+  .show-more-button,
+  #button-wrapper {
+    width: 75%;
+  }
 }
 
-.save-btn,
-.show-more-button {
-  background-color: #4BA59E;
-  border: none;
-  color: #FFFFFF;
-  display: block;
-  font-size: 1.4em;
-  height: 15%;
-  margin: auto;
-  width: 56%;
-}
-
-.save-btn:disabled {
-  background-color: #9AB3B1;
-}
-
-/*rename this to filter*/
-
-#search {
-  height: 9%;
-  margin: 1.5em auto;
-  padding: 1%;
-}
-
-@media screen and (max-width: 900px) {
-  article {
-    height: 50%;
-    margin: auto;
-    width: 64%;
+@media screen and (max-width: 672px) {
+  article,
+  .user-input,
+  .save-btn,
+  .show-more-button,
+  #button-wrapper {
+    width: 90%;
   }
 
-  #form-styling-div {
-    flex-direction: column;
-  }
-  
-  header {
-    height: 52vh;
+  #button-wrapper {
+    flex-wrap: wrap;
+    width: 400px;
   }
 
-  h1 {
-    font-size: 3em;
-  }
-
-  h2 {
-    font-size: 1.6em;
-  }
-
-  h3 {
-    font-size: 1em;
-    margin-left: 5.4em;
-  }
-
-  input,
-  textarea {
-    font-size: 0.85em;
-    height: 13%;
-    margin: 0% 0% 3% 17%;
-    padding: 0% 0% 0% 1%;
-    width: 64%;
-  }
-
-  p {
-    font-size: 1em;
-  }
-
-  .downvote {
-    bottom: 1.6em;
-  }
- 
-  .save-btn {
-    font-size: 1.5em;
-    height: 14%;
-    margin: 3% 1% 1% 16.5%;
-    display: block;
-    width: 66%;
-  }
-
-  .upvote {
-    bottom: 1.6em;
-  }
-
-  /*rename this to filter*/
-
-  #search {
+  .importance-button,
+  .reset-button {
     height: 3em;
-    padding: 0% 0% 0% 1%;
   }
-  
 }
 
-@media screen and (max-width: 420px) {
-  header {
-    height:  48vh;
-  }
-
-  h1 {
-    font-size: 1.85em;
-    height: 4vh;
-    padding: 1% 0% 1% 1%;
-  }
-
-  h2{
-    font-size: 1.5em;
+@media screen and (max-width: 400px) {
+  #button-wrapper {
+    flex-wrap: wrap;
+    width: 300px;
   }
 
   h3 {
     font-size: 1.2em;
-  } 
-
-  input,
-  textarea {
-    font-size: 0.95em;
-    height: 3vh;
-    margin: .8em auto;
-    padding: 4% 0% 2% 2%;
-  }
-
-  p {
-    font-size: .8em;
-  }
-
-  .downvote {
-    bottom: 1.9em;
-  }
-
-  .save-btn {
-    border: none;
-    font-size: 1.65em;
-    height: 15%;
-    margin: auto;
-    width: 66.6%;
-  }
-
-  .title-missing-field,
-  .body-missing-field {
-    font-size: 0.8em;
-  }
-
-  .upvote {
-    bottom: 1.9em;
-  }
-
-  #description-input {
-    height: 29%;
-  }
-
-  #search {
-    margin: 1em auto;
   }
 }
