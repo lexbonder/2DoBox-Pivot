@@ -1,5 +1,7 @@
 # ToDoBox
 
+## Synopsis
+
 In this project, we took an existing repo for a project called IdeaBox and pivoted to an app called ToDoBox. In this project, we refactored the existing repo's code, completed the search/filter functionality, added functionality for filtering by importance, and changed the user interface. You can find the instructions for the first project here:
 
 http://frontend.turing.io/projects/ideabox.html
@@ -11,6 +13,23 @@ http://frontend.turing.io/projects/2DoBox-Pivot-Mod1.html
 And the original repo here:
 
 https://github.com/cbdallavalle/idea-box
+
+# HeadCount 2.0
+
+## Synopsis
+
+HeadCount 2.0 is a paired project designed to challenge our skills at manipulating data and creating small, reusable React components for the Turing School of Software & Design. We were given data about Colorado kindergarten school performances to dynamically present in a user friendly fashion. Cards are appended to the page and can be compared to discover the similarities between the school averages. A search bar at the top right allows users to search for the school district they are looking for. The project is built using React.js and contains a full testing suite using Jest and Enyme for TDD. 
+
+## Project Goals
+
+* Refactor another group's project.
+* Work in a pre-existing code base and add features.
+
+## Installation
+
+Fork or clone this project
+
+Open `index.html`
 
 ### Initial Comp:
 
